@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //mark | join
+        data1 = [78, 1.69, 92, 1.95];
+        data2 = [95, 1.88, 85, 1.76];
+
+        function BMI(data) {
+            let res = true;
+
+            console.log("Mark" + data[0] + " " + data[1]);
+            console.log("Join" + data[2] + " " + data[3]);
+
+            bmiMark = data[0] / data[1] * data[1];
+            bmiJoin = data[2] / data[3] * data[3];
+
+            if (bmiJoin > bmiMark) {
+                console.log("Join has bmi higher than Mark");
+            } else {
+                console.log("Mark has bmi higher than Join");
+            }
+        }
+
+        BMI(data1);
+        BMI(data2);
+
+
+    </script>
+</body>
+
+</html>

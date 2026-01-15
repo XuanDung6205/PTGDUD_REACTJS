@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let data1 = [96, 108, 89, 88, 91, 110];
+        let data2 = [97, 112, 101, 109, 95, 23];
+        let data3 = [97, 112, 101, 109, 95, 106];
+
+        function avScore(data) {
+            let score1 = 0, score2 = 0;
+
+            for (let i = 0; i < 3; i++) {
+                score1 += data[i];
+            }
+
+            for (let i = 3; i < 6; i++) {
+                score2 += data[i];
+            }
+
+            if (score1 < 100 && score2 < 100) {
+                console.log("không có đội nào thắng");
+            } else if (score1 < 100) {
+                console.log("đội 2 thắng với điểm số: " + score2);
+            } else if (score2 < 100) {
+                console.log("đội 1 thắng với điểm số: " + score1);
+            } else {
+                if (score1 > score2) {
+                    console.log("đội 1 thắng với điểm số: " + score1);
+                } else if (score2 > score1) {
+                    console.log("đội 2 thắng với điểm số: " + score2);
+                } else {
+                    console.log("hai đội hòa nhau với điểm số: " + score1);
+                }
+            }
+        }
+
+        avScore(data1);
+        avScore(data2);
+        avScore(data3);
+    </script>
+</body>
+
+</html>
