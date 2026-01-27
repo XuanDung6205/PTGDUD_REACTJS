@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+
+    <script>
+        function createImage(imgPath) {
+            return new Promise(function (resolve, reject) {
+                const Img = document.createElement('img');
+                Img.src = imgPath;
+
+                // khi load xong thì mới gọi
+                Img.addEventListener('load', function () {
+                    console.log("Image loaded");
+                    resolve(Img);
+                });
+                Img.addEventListener('error', function () {
+                    // trong này sẽ chạy khi ảnh load thất bại
+                    reject();
+                });
+
+            });
+        }
+        let createImg = createImage("image1.png");
+        createImg
+            .then(function (Img) {
+                // console.log("Image loaded");
+                return Img;
+            })
+            .then(function (Img) {
+                document.getElementById("container").appendChild(Img);
+                return Img;
+            })
+            .then(function (Img) {
+                return wait(2000) // để thực promise thật sự đợi khi có return
+                    .then(function () {
+                        return Img; // giữ lại img cho then phía dưới
+                        // Promise biến mất sau khi resolve
+                    });
+            })
+            .then(function (Img) {
+                Img.style.display = "none";
+                return;
+            })
+            .then(function () {
+                let nextImg = createImage("image2.png"); // promise
+                return nextImg.then(function (Img) {
+                    return Img;
+                });
+            })
+            .then(function (Img) {
+                document.getElementById("container").appendChild(Img);
+
+                return Img;
+            })
+            .then(function (Img) {
+                return wait(2000)
+                    .then(function () {
+                        return Img;
+                    });
+            })
+            .then(function (Img) {
+                Img.style.display = "none";
+                return Img;
+            })
+            .catch(function () {
+                console.log("Image not loaded");
+            });
+
+        function wait(seconds) {
+            return new Promise(function (resolve) {
+                setTimeout(resolve, seconds);
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+
+    <script>
+        function createImage(imgPath) {
+            return new Promise(function (resolve, reject) {
+                const Img = document.createElement('img');
+                Img.src = imgPath;
+
+                // khi load xong thì mới gọi
+                Img.addEventListener('load', function () {
+                    resolve(Img);
+                });
+                Img.addEventListener('error', function () {
+                    // trong này sẽ chạy khi ảnh load thất bại
+                    reject();
+                });
+
+            });
+        }
+        let createImg = createImage("image1.png");
+        createImg
+            .then(
+                function (Img) {
+                    console.log("Image loaded");
+                    return Img;
+                })
+            .then(function (Img) {
+                document.getElementById("container").appendChild(Img);
+            })
+            .catch(function () {
+                console.log("Image not loaded");
+            });
+
+    </script>
+</body>
+
+</html>
