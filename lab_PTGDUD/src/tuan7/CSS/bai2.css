@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* Light mode */
+.light {
+    background: #f5f5f5;
+    color: #111;
+}
+
+/* Dark mode */
+.dark {
+    background: #121212;
+    color: #eee;
+}
+
+/* Card chung */
+.card {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Button */
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.light .btn {
+    background: #111;
+    color: white;
+}
+
+.dark .btn {
+    background: #eee;
+    color: black;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
