@@ -1,9 +1,9 @@
-import Bai3 from "./Tuan6/Bai3/bai3"
+import Bai2 from "./tuan7/Bai2/bai2"
 
 function App() {
   return (
     <div>
-      <Bai3></Bai3>
+      <Bai2></Bai2>
     </div>
 
   )
