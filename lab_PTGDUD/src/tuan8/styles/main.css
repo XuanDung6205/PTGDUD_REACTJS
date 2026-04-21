@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #f8f8f8;
+    color: #1a1a1a;
+}
+
+/* ======================== HEADER ======================== */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 40px;
+    background: white;
+    border-bottom: 1px solid #f0f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #f43f5e;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    background: #f43f5e;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+}
+
+.search-wrapper {
+    position: relative;
+    flex: 0 0 260px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 14px;
+}
+
+.search {
+    width: 100%;
+    padding: 8px 12px 8px 32px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #555;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search:focus {
+    border-color: #f43f5e;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+}
+
+.nav a,
+.nav span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+
+.nav a:hover,
+.nav span:hover {
+    color: #f43f5e;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.recipe-box-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: white;
+    color: #f43f5e;
+    border: 1.5px solid #f43f5e;
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s;
+}
+
+.recipe-box-btn:hover {
+    background: #f43f5e;
+    color: white;
+}
+
+.recipe-box-btn svg {
+    width: 15px;
+    height: 15px;
+}
+
+.avatar-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #e5e7eb;
+    flex-shrink: 0;
+}
+
+.avatar-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ======================== BREADCRUMB ======================== */
+.breadcrumb {
+    padding: 12px 40px;
+    font-size: 13px;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.breadcrumb a {
+    color: #6b7280;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: #f43f5e;
+}
+
+.breadcrumb-sep {
+    color: #d1d5db;
+}
+
+.breadcrumb-current {
+    color: #f43f5e;
+    font-weight: 500;
+}
+
+/* ======================== PROFILE ======================== */
+.profile-section {
+    padding: 20px 40px 0;
+    background: white;
+}
+
+.profile-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.profile {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    padding-bottom: 24px;
+}
+
+.avatar-wrapper {
+    flex-shrink: 0;
+}
+
+.avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #fce7eb;
+    border: 3px solid #fce7eb;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-bio {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.subscribers-badge {
+    background: #fce7eb;
+    color: #f43f5e;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1.5px solid #f43f5e;
+    background: white;
+    color: #f43f5e;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.share-btn:hover {
+    background: #f43f5e;
+    color: white;
+}
+
+/* ======================== TABS ======================== */
+.tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid #f0f0f0;
+    padding: 0 40px;
+    background: white;
+}
+
+.tab {
+    padding: 12px 0;
+    margin-right: 28px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.tab:hover {
+    color: #f43f5e;
+}
+
+.tab.active {
+    color: #f43f5e;
+    border-bottom-color: #f43f5e;
+}
+
+/* ======================== RECIPE GRID ======================== */
+.grid-section {
+    padding: 28px 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.card:hover img {
+    transform: scale(1.04);
+}
+
+.card-body {
+    padding: 12px 12px 14px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.card-text {
+    flex: 1;
+}
+
+.card-text h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.time {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.bookmark-btn {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1.5px solid #f43f5e;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.bookmark-btn:hover {
+    background: #fce7eb;
+}
+
+.bookmark-btn svg {
+    width: 14px;
+    height: 14px;
+    stroke: #f43f5e;
+    fill: none;
+    stroke-width: 2;
+}
+
+/* ======================== PAGINATION ======================== */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 40px 30px;
+}
+
+.page-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: white;
+    font-size: 14px;
+    color: #374151;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.page-btn:hover {
+    border-color: #f43f5e;
+    color: #f43f5e;
+}
+
+.page-btn.active {
+    background: #f43f5e;
+    color: white;
+    border-color: #f43f5e;
+}
+
+.page-btn.dots {
+    border: none;
+    background: transparent;
+    cursor: default;
+}
+
+.page-btn.dots:hover {
+    color: #374151;
+    border: none;
+}
+
+/* ======================== FOOTER ======================== */
+.footer {
+    background: #1c1c1e;
+    color: white;
+    padding: 48px 40px 24px;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid #333;
+}
+
+.footer-col h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: white;
+}
+
+.footer-col p {
+    font-size: 13px;
+    color: #9ca3af;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.footer-col a {
+    display: block;
+    font-size: 13px;
+    color: #9ca3af;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+}
+
+.footer-col a:hover {
+    color: white;
+}
+
+.footer-email-row {
+    display: flex;
+    gap: 8px;
+}
+
+.footer-email-input {
+    flex: 1;
+    padding: 9px 12px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #2a2a2c;
+    color: white;
+    font-size: 13px;
+    outline: none;
+}
+
+.footer-email-input::placeholder {
+    color: #6b7280;
+}
+
+.footer-email-input:focus {
+    border-color: #f43f5e;
+}
+
+.footer-send-btn {
+    padding: 9px 18px;
+    background: #f43f5e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.footer-send-btn:hover {
+    background: #e11d48;
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+}
+
+.footer-logo-icon {
+    width: 28px;
+    height: 28px;
+    background: #f43f5e;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.footer-legal {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.footer-legal a {
+    color: #9ca3af;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    color: white;
+}
+
+.footer-visily {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #6b7280;
+    margin-left: auto;
+}
